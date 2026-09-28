@@ -82,7 +82,7 @@ body{margin:0;background:var(--bg);color:#0f172a;overflow-x:hidden;line-height:1
 <div id="ohcs-timer-bar">
   <div style="min-width:0">
     <div class="t-label">APPLICATION CLOSES IN </div>
-    <div class="t-sub">Monday, 28 September 2026 — 2:00 PM</div>
+    <div class="t-sub">TUESDAY, 29 September 2026 — 12:00 PM</div>
   </div>
   <div class="t-countdown">
     <div class="t-unit"><div class="t-num" id="ohcs-d">00</div><div class="t-lbl">Days</div></div>
@@ -191,7 +191,7 @@ document.getElementById('voucherModal').addEventListener('click',e=>{ if(e.targe
 
 // TIMER - DEADLINE 10TH OF THIS MONTH - 26 SEPT 2026 12:00 PM
 (function(){
-  var DEADLINE = new Date('2026-09-28T14:00:00').getTime();
+  var DEADLINE = new Date('2026-09-29T12:00:00').getTime();
   var bar = document.getElementById('ohcs-timer-bar');
   function pad(n){return String(n).padStart(2,'0')}
   function tick(){
