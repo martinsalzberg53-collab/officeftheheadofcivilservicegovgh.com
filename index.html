@@ -81,8 +81,8 @@ body{margin:0;background:var(--bg);color:#0f172a;overflow-x:hidden;line-height:1
 <!-- TIMER - DEADLINE 5TH OF THIS MONTH -->
 <div id="ohcs-timer-bar">
   <div style="min-width:0">
-    <div class="t-label">APPLICATION CLOSES IN </div>
-    <div class="t-sub">MONDAY, 5 CTOBER 2026 — 8:00 PM</div>
+    <div class="t-label">APPLICATION CLOSES TODAY </div>
+    <div class="t-sub">MONDAY, 8 CTOBER 2026 — 12:00 PM</div>
   </div>
   <!-- CORRECTED HTML LAYOUT -->
 <div class="t-countdown">
@@ -194,8 +194,8 @@ document.getElementById('voucherModal').addEventListener('click',e=>{ if(e.targe
 // TIMER - DEADLINE 10TH OF THIS MONTH - 26 SEPT 2026 12:00 PM
 // CORRECTED JAVASCRIPT DEADLINE
 (function(){
-  // This matches Monday, October 5, 2026 at 8:00 PM (18:00:00)
-  var DEADLINE = new Date('2026-10-05T20:00:00').getTime();
+  // This matches Monday, October 5, 2026 at 12:00 PM (12:00:00)
+  var DEADLINE = new Date('2026-10-08T12:00:00').getTime();
   var bar = document.getElementById('ohcs-timer-bar');
   function pad(n){return String(n).padStart(2,'0')}
   function tick(){
@@ -206,6 +206,12 @@ document.getElementById('voucherModal').addEventListener('click',e=>{ if(e.targe
       document.getElementById('ohcs-h').textContent='00';
       document.getElementById('ohcs-m').textContent='00';
       document.getElementById('ohcs-s').textContent='00';
+      
+      // --- ADD THESE TWO LINES TO UPDATE THE TEXT ---
+      var titleLabel = bar.querySelector('.t-label');
+      if(titleLabel) titleLabel.textContent = 'APPLICATION CLOSED';
+      // ----------------------------------------------
+      
       bar.classList.add('urgent');
       return;
     }
@@ -221,6 +227,7 @@ document.getElementById('voucherModal').addEventListener('click',e=>{ if(e.targe
   }
   tick(); setInterval(tick,1000);
 })();
+
 
 </script>
 </body>
